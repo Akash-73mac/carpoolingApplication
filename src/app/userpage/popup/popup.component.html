@@ -1,0 +1,43 @@
+
+<label class="lable">firstname</label>
+<input type="text" [value]="fname" class="inp" disabled>
+<label class="lable" >lastname</label>
+<input type="text" [value]="lname" class="inp" disabled>
+<label class="lable" >email</label>
+<input type="text" [value]="email" class="inp" disabled>
+<label class="lable">phone</label>
+<input type="text" [value]="phone" class="inp" disabled>
+<label class="lable">password</label>
+<input type="text" class="text">
+
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closepopup()" id="close">Close</button>
+<button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)="submitForm()" id="submit">Submit</button>
+
+
+<!-- <div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Issue Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closepopup()"></button>
+      </div>
+      <div class="modal-body">
+        <form >
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Vehicle Type:</label>
+            <input type="text" class="form-control" id="recipient-name"  formControlName="vehicleType" required>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Issue:</label>
+            <textarea class="form-control" id="message-text" formControlName="issue"></textarea>
+          </div>
+        </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closepopup()">Close</button>
+        <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)="submitForm()">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->

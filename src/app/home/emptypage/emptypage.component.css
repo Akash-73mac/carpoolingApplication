@@ -1,0 +1,29 @@
+
+#preId{
+   
+    position:absolute;
+    top: 190px;
+    background-color: rgb(255, 255, 255);
+    left: 450px;
+    height: 300px;
+    border:none;
+
+}
+#preId2{
+    font-size: x-large;
+    background-color: rgb(255, 255, 255);
+    justify-content:flex-start;
+    padding: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#image{
+    background-image: url("C:/Users/z041490/car-pool/src/assets/Images/driveTogether.svg");
+    width: 400px;
+    height: 300px;
+    background-repeat: no-repeat;
+}
+#footer{
+    width: 700px;
+    position:absolute;
+
+}

@@ -1,0 +1,66 @@
+.nav{
+    background-color:black;
+    width:100%;
+    height:70px;
+}
+.links{
+    align-items: center;
+   color: #ffffff;
+    position: relative;
+    justify-content: end;
+    font-family: sans-serif;
+    font-size: large;
+    font-weight:bold ;
+    position: relative;
+    left:800px;
+    top:15px;
+}
+.linksPosition{
+    padding: 10px;
+    justify-content: end;
+    align-items: end;
+}
+a:hover{
+    color:white;
+    text-shadow: 0px 15px 16px rgb(220, 220, 220);
+    /* background-color: rgb(190, 237, 237);
+    border: solid 1px ;
+    border-radius: 10px; */
+}
+#login{
+    width: 100px;
+    color: rgb(244, 235, 235);
+    background-color: black;
+    position: relative;
+    left: 800px;
+    top: 15px; 
+    font-family: sans-serif;
+    font-size: large;
+    font-weight: bold;
+border-color: black;
+}
+#login:hover{
+    /* color: black;
+    background-color: rgb(255, 255, 255) ; */
+    box-shadow:0px 0px 1px 2px rgb(134, 110, 210);
+    
+}
+#logo{
+    width: 70px;
+    height: 70px;
+    position: relative;
+    border-radius: 50%;
+    left: -300px;
+    /* border: solid 1px black; */
+    top: -1px;
+}
+#projectName{
+    position:absolute;
+    left: 170px;
+    color: #16d2ccfe;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: medium;
+    top:23px;
+    z-index: 3;
+}

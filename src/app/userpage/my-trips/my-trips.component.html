@@ -1,0 +1,26 @@
+
+
+<table class="table"  >
+    <thead class="thead-dark" >
+      <tr>
+        <th scope="col">s.no</th>
+        <th scope="col">from</th>
+        <th scope="col">to</th>
+        <th scope="col">date</th>
+        <th scope="col">booked seats</th>
+        <th scope="col">price</th>
+        <!-- <th scope="col">status</th> -->
+      </tr>
+    </thead>
+    <tbody *ngFor="let data of source">
+      <tr style="height: 100px;">
+        <th scope="row">{{data.Index}}</th>
+        <td>{{data.from.split()}}</td>
+        <td>{{data.to}}</td>
+        <td>{{data.date}}</td>
+        <td>{{data.seats}}</td>
+        <td><b>{{data.amount}}</b></td>
+        <!-- <td>status</td> -->
+      </tr>
+    </tbody>
+  </table>

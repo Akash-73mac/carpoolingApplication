@@ -1,0 +1,75 @@
+.header{
+    position: absolute;
+    top: 120px;
+    left: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    /* box-shadow:2px 3px 4px  #aaaa; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 300px;
+}
+#background{
+    background-image: url("C:/Users/z041490/car-pool/src/assets/Images/Profile.svg");
+    
+}
+#profile{
+    position: absolute;
+    top: 0px;
+    left: 49px;
+    background-color: rgba(22, 70, 229, 0.525);
+    color: rgb(255, 255, 255);
+    border-radius:15px;
+    width: 200px;
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#prof2{
+    position: relative;
+    top: -20px;
+    letter-spacing: 1px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:xx-large;
+}
+#mobile{
+    font-size: larger;
+    position: relative;
+    top:-10px;
+    left: -10px;
+}
+#email{
+    font-size: larger;
+    position: relative;
+    top:-6px;
+    left: 47px;
+    top: -22px;
+}
+#age{
+    font-size: larger;
+}
+#role{
+    font-size: larger;
+}
+#submit{
+	position: relative;
+	width: 180px;
+	height: 40px;
+	border-radius: 10px	;
+	border: none;
+	top: 35px;
+	background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
+	text-align: center;
+	text-transform: uppercase;
+	transition: 0.5s;
+	background-size: 200% auto;
+	color: white;            
+	box-shadow: 0 0 20px #eee;
+	display: block;
+	left: 20px;
+}
+
+          #submit:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }

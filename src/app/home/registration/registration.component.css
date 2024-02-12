@@ -1,0 +1,177 @@
+
+.input{
+    width: 270px;
+    background: transparent;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+input::placeholder {
+  color: black; /* default color of the placeholder */
+}
+
+input.placeholder-red::placeholder {
+  color: red; /* color for the asterisk */
+}
+#home{
+  background-image: linear-gradient(90deg, #171111 100%);
+  position: absolute;
+  right: 200px;
+  width: 800px;
+  top: 100px;
+  border-radius:20px;
+  border: solid 2px ;
+  color:#aaa;
+	background: linear-gradient(to bottom, #4668ac49, #97975b0b);
+	box-shadow: 0px 5px 20px 1px;
+	border-radius: .4em;
+}
+.form-control{
+    height: 40px;
+    color: rgb(31, 28, 35);
+    border: none;
+    border-bottom: solid 3px rgb(0, 0, 0);
+    margin: 18px;
+    background: rgba(253, 255, 255, 0.916);
+}
+.form-control:hover{
+box-shadow: blue;
+}
+input::placeholder {
+    font-size:medium;
+    font-weight:1px;
+    /* opacity: 0*/
+    color: rgb(11, 12, 12);
+    font-family:sans-serif;
+    letter-spacing: 1px;
+  }
+  /* #home{
+    width: 600px;
+    border: solid 2px 3px ;
+  } */
+  #register{
+    background-color: black;
+    color: rgb(255, 255, 255);
+    position:relative;
+    top: -58px;
+    align-items: center;
+    line-height: 25px;
+    margin-left: 400px;
+    width: 150px;
+    letter-spacing: 1px;
+  }
+  #age{
+    width: 100px;
+    border-bottom:solid 3px rgb(0, 0, 0) ;
+    position: relative;
+    border-radius: 10px;
+  }
+  #carimg{
+    position:absolute;
+    left: 1px;
+    width: 99%;
+    height: 480px;
+    background-image: url("C:/Users/z041490/car-pool/src/assets/Images/Carpooling.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+#lastname{
+  position: absolute;
+  top: 0px;
+  left: 350px;
+}
+#email{
+  position: absolute;
+  top: 56px;
+  left: 350px;
+}
+#role{
+  position: absolute; 
+  top: 114px;
+  left: 350px;
+}
+.fnameerror{
+  position: absolute;
+  top: 55px;
+  left: 30px;
+}
+.lnameerror{
+  position: absolute;
+  top: 55px;
+  left: 18px;
+}
+.ageerror{
+  position: absolute;
+  top: 112px;
+  left: 30px;
+}
+.emailerror{
+  position: absolute;
+  top: 55px;
+  left: 18px;
+}
+.phoneerror{
+  position: absolute;
+  top: 172px;
+  left: 30px;
+}
+.paserror{
+  position: relative;
+  top: -20px;
+  left: 20px;
+}
+#dirivingliscence{
+width:270px;
+}
+#idProof{
+  width: 270px;
+}
+#carname{
+  position: absolute; 
+  top: 172px;
+  left: 350px;
+  width: 150px;
+}
+#capacity{
+  position: absolute; 
+  top: 172px;
+  left: 515px;
+  width: 104px;
+}
+#plateNumber{
+  position: absolute; 
+  top:57%;
+  left: 350px;
+}
+.CarNameError{
+  position: absolute;
+  top: 53px;
+  left: 19px;
+  width: 200px;
+}
+.capacityError{
+  position: absolute;
+  top: 53px;
+  left: 20px;
+  width: 200px;
+}
+.plateError{
+  position: absolute;
+  top: 53px;
+  left: 19px;
+}
+#dirveLiscense{
+  color: #392b2b;
+  position:absolute;
+  top: 177px;
+  left: 200px;
+  font-weight: 100;
+}
+#govtId{
+  color: #392b2b;
+  position:absolute;
+  top: 237px;
+  left: 220px;
+  font-weight: 100;
+}

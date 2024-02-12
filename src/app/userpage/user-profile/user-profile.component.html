@@ -1,0 +1,28 @@
+<div id="background"></div>
+<div  class="header">
+    <div id="profile">
+        <h1 id="prof2"> Profile</h1>
+    </div>
+    <div>
+        <h3><span> <i class="fa fa-user" style="font-size:45px;color:rgba(0, 0, 0, 0.881);">&nbsp;&nbsp;</i><span></span>{{this.fname+" "+this.lname }}</span></h3> 
+    </div>   
+      <div>
+        <h4><span><i class="fa fa-mobile" style="font-size:70px;color:rgba(0, 0, 0, 0.927);">&nbsp;&nbsp;</i><span id="mobile">{{mobile}}</span></span></h4>
+      </div>
+   
+    <div>
+        <h4><span><i class="fa fa-envelope" style="font-size:35px;color:rgba(0, 0, 0, 0.854);">&nbsp;&nbsp;</i><span id="email"> {{email}}</span> </span></h4>
+    </div>
+    <div>
+        <h4><span id="age">age &nbsp;&nbsp;&nbsp;{{age}}</span></h4>
+      </div> 
+    <div>
+        <h4><span id="role">role &nbsp;&nbsp; {{role}}</span></h4>
+    </div>
+<button id="submit" (click)="editData(role)">edit </button>
+</div>
+
+
+
+
+

@@ -1,0 +1,31 @@
+.nav {
+	position: sticky;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 60px;
+	top: 0;
+}
+
+.subnav {
+	position: sticky;
+	bottom: 0;
+	top: 60px; 
+}
+.nav {
+	background: #222c35;
+    color: aliceblue;
+    &__title {
+		margin: 0px 30px;
+	}
+	
+}
+.nav__item {
+    display:inline-block;
+    margin: 2px 30px;
+    font-size: medium;
+    font-family: sans-serif;
+    font-weight:lighter;
+
+}
+

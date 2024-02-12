@@ -1,0 +1,41 @@
+<div class="card w-50">
+  <div class="card-body">
+    <h5 class="card-title">Note</h5>
+    <p class="card-text">give route number starting and ending place lettes</p>
+    <p class="card-text">Routes will be stored in given order </p> 
+  </div>
+</div>
+  <form [formGroup]="routing" (ngSubmit)="addroute()">
+    <div class="routeNumber">
+      <input type="text"  placeholder="route number" formControlName="routenumber" id="routeinp" (focus)="toggleRouteNameError()" value="">
+      <span style="color: red;" *ngIf="RouteNumber?.invalid && (RouteNumber?.dirty|| RouteNumber?.touched || RouteNumber?.valueChanges)">
+        <span *ngIf="RouteNameError">
+            <span style="color: red;" *ngIf="RouteNumber?.hasError('required')">*RouteNumber is required</span>
+            <span style="color: rgb(245, 0, 25);" *ngIf="already" >*RouteNumber already taken</span>   
+          </span>
+          </span>
+    </div>
+    
+      <h2 class="fs-title">Stops</h2> 
+      <div class="input-container" formArrayName="placesArray">
+          <div *ngFor= "let skillGroup of placeFormArray.controls; let i = index" [formGroupName]= "i" class="skill-group">
+              <div class="input-container">
+                  <input type="text" formControlName="places" placeholder="place name">
+                  operational Status:<input type="checkbox" formControlName="status">
+              </div>
+              <button type="button" class="action-button" id="skillBtn" (click)="removePlace(i)">Remove Stop</button>
+          </div>
+      </div>
+      <div class="text-center">
+          <div class="routeNumber">
+            <button type="button" class="btn-grad" (click)="addPlace()">Add Stops</button>
+          </div>
+         <div class="routeNumber">
+          <button type="submit" class="btn-grad1">submit</button> 
+         </div>
+         
+        </div>
+
+  </form>
+  <router-outlet></router-outlet> 
+  

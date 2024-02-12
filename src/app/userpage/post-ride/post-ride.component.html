@@ -1,0 +1,83 @@
+
+<img src="assets/Images/navigator.svg" id="navigator" *ngIf="background">
+<!-- <button (click)="callModal()"> click</button> -->
+<div class="card text-center" id="publish">
+    <div class="card-body">
+     <form (ngSubmit)="publishRide()" [formGroup]="publish">
+
+      <!-- starting point -->
+        <div class="buttonspace">
+            <input type="text" placeholder="staring point*"  
+            (focus)="toggleDepatureError()" value=""
+            class="inputstyle" formControlName="depature" required>
+            
+            <span  style="color: red;" id="departureError" *ngIf="departure?.invalid && (departure?.dirty || departure?.touched || departure?.valueChanges )">
+              <span  *ngIf="departureError">
+                  <span style="color: red; font-weight:700;" *ngIf="departure?.hasError('required')" id="depature">*required field</span>
+           </span>
+          </span>
+        </div>
+<!-- ending point  -->
+        <div class="buttonspace2" >
+            <input type="text" placeholder="ending point*" class="inputstyle" formControlName="arrival" (focus)="toggleArrivalError()" value="">
+            <span  style="color: red;" *ngIf="arrival?.invalid && (arrival?.dirty || arrival?.touched || arrival?.valueChanges )">
+              <span  *ngIf="arrivalError">
+                  <span style="color: red;" *ngIf="arrival?.hasError('required')" id="arrival">*required field</span>
+           </span>
+          </span>
+        </div >
+        
+        <div  class="buttonspace3">
+          <!-- booking Date -->
+            <input type="datetime-local" value=""  [min]="formattedDate"  formControlName="bookingDate" placeholder="ridedate" id="date" 
+            (focus)="toggleDateError()" value="">
+            <span  style="color: red;" *ngIf="date?.invalid && (date?.dirty || date?.touched || date?.valueChanges )">
+              <span  *ngIf="dateError">
+                  <span style="color: red;" *ngIf="date?.hasError('required')" id="dateError">*required field</span>
+           </span>
+          </span>
+          <!-- seats -->
+            <input type="number" min="1" max="5" value="1" formControlName="avalSeats"  placeholder="availseats" id="seat" 
+            (focus)="toggleSeatError()"  value="">
+            <span  style="color: red;" *ngIf="seat?.invalid && (seat?.dirty || seat?.touched || seat?.valueChanges )">
+              <span  *ngIf="seatError">
+                  <span style="color: red;" *ngIf="seat?.hasError('required')" id="seatError">*required field</span>
+           </span>
+          </span>
+        </div>
+    
+
+        <div style="padding: 12px;">
+            <button type="submit" id="submit">publish</button>
+        </div>
+        
+     </form>
+    </div>
+ 
+  </div>
+  <div class="ratio ratio-1x1" id="map">
+    <div><iframe [src]="generateGoogleMapUrl(locationData)" width="750" height="400" frameborder="0" style="border:0" allowfullscreen></iframe> </div>
+  </div>
+
+ <div *ngFor="let val of depatureData" id="optionDiv3">
+  <div id="optionDiv4">
+    <button (click)="selectOption(val.display_name,val.lat,val.lon)" *ngIf="hide2" id="place1">{{val.display_name.slice(0,40)  }}</button>
+  </div>
+ </div>
+
+
+ <div *ngFor="let val of arrivalData" id="optionDiv">
+  <div id="optionDiv2">
+    <button (click)="selectOption3(val.display_name,val.lat,val.lon)" *ngIf="hide" id="place">{{val.display_name.slice(0,40) }}</button>
+  </div>
+ </div>
+
+ <div id="distance"  *ngIf="popup"> 
+  <i class="fa fa-road" id="rode"></i>   
+  <span id="kms"> {{Distance}} Kms</span>
+  <span id="rupeeSymbol">&#8377;</span> 
+ <span id="rupees">{{price}}</span>
+ </div>
+ 
+<router-outlet></router-outlet>
+

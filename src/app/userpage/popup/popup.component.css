@@ -1,0 +1,37 @@
+.inp{
+    position: relative;
+    margin: 10px;
+    height: 40px;
+    width:270px;
+    left: 150px;
+}
+.lable{
+    position:relative;
+    left: 80px;
+    top: 37px;
+
+}
+#pos1{
+    position:absolute;
+    top: -px;
+    left:10px;
+}
+.text{
+    width: 200px;
+    position: relative;
+    margin: 20px;
+    left:200px;
+}
+#close{
+width: 100px;
+position: relative;
+left: 160px;
+top: 0px;
+}
+#submit{
+    width: 100px;
+position: relative;
+left: 270px;
+top:-35px;
+
+}

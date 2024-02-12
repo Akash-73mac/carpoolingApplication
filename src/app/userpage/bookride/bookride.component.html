@@ -1,0 +1,61 @@
+<div class="wrap">
+  <div class="search">
+     <input type="text" class="searchTerm" placeholder="from">
+     <input type="text" class="searchTerm" placeholder="to">
+     <button type="submit" class="searchButton">
+       <i class="fa fa-search"></i>
+    </button>
+  </div>
+</div>
+<div>
+  <mat-grid-list cols="3" gutterSize="2px" >
+    <mat-grid-tile *ngFor="let tabledata of drivers" >
+      
+      <mat-card style="height: 250px; width: 400px;" id="mystyle"  >
+        
+        <mat-card-header>
+          <span id="seatbadge">seats</span>
+          <span id="badge">{{tabledata.Seats}}</span>
+          <mat-card-title id="driverName">
+            <span class="posico">Driver :{{ tabledata.DriverName}}</span>
+          </mat-card-title>
+          <mat-card-subtitle>
+            <i class="fa fa-map-marker" style="color: rgb(4, 241, 103);font-size:35px;"id="departMark"></i>
+                <span id="posico2">
+             {{ tabledata.Depature}}
+            </span>
+            </mat-card-subtitle>
+          <mat-card-subtitle>
+            <i class="fa fa-map-marker" style="color: rgb(252, 0, 0);font-size:35px;" id="arrivalMark" ></i>
+            <span style="color: black;" >{{ tabledata.Arrival}}</span>
+        </mat-card-subtitle>
+         
+          <mat-card-subtitle  id="details">
+          <span >
+          
+          <span class="modelname">{{tabledata.carModel}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          <span class="modelname">
+            {{tabledata.Distance}}Km &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          </span>
+          <span class="modelname">
+            Rs :{{ tabledata.prize}}&nbsp;/&nbsp;person
+          </span>
+         </span>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+           
+           <span id="seats2">book seats</span> 
+           <!-- <button (click)="increaseSeats(tabledata.Seats)">+</button> -->
+            <input type="number" min="0" max="{{tabledata.Seats}}" maxlength="1" placeholder="0"  id="seats" (change)="addSeats($event)">
+            <!-- <button (click)="decreaseSeats(tabledata.Seats)"> formControlName="seatsBooked" -</button> -->
+           
+         <button  type="submit" id="book" class="btn btn-grad" (click)="upload(tabledata)">book</button>
+          <!-- (click)="deleteData(tabledata.id)" -->
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<router-outlet></router-outlet>

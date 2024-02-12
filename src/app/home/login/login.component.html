@@ -1,0 +1,33 @@
+
+<img src="assets\Images\log.jpg" id="logimg">
+<form [formGroup]="userlogin" (ngSubmit)="userLoginfunction()" class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12 ">
+    <img src="assets\Images\person.jpg" style="width: 170px; height: 150px;" 
+class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12 "
+id="person">
+    <div  id="box">
+        <div class="input-group input-group-lg" class="input">
+            <input type="text" placeholder="email*" formControlName="email" class="form-control" formControlName="email" (focus)="toggleEmailError()" value="">
+            <span style="color: red;" *ngIf="getEmail?.invalid && (getEmail?.dirty|| getEmail?.touched || getEmail?.valueChanges)">
+                <span *ngIf="emailError">
+                    <span style="color: red;" *ngIf="getEmail?.hasError('required')">*email is required</span>
+                    </span>
+                    </span>
+       </div>
+
+
+       <div class="input-group input-group-lg" class="input">
+           <input type="password" placeholder="password*" class="form-control" formControlName="password" (toggle)="togglePasswordError()" value="">
+           <span style="color: red;" *ngIf="getPassword?.invalid && (getPassword?.dirty|| getPassword?.touched || getPassword?.valueChanges)">
+            <span *ngIf="passwordError">
+                <span style="color: red;" *ngIf="getPassword?.hasError('required')">*password is required</span>
+                </span>
+                </span>
+
+       </div>
+
+       <div class="input-group input-group-lg" >
+        <button type="submit"  id="submit" class="btn btn-primary" class="form-control"> submit</button>
+       </div>
+</div>
+</form>
+

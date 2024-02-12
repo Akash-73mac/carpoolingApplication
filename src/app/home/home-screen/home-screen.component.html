@@ -1,0 +1,25 @@
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light " class="nav">
+        <div class="collapse navbar-collapse">
+            <img src="assets\Images\shareShift.png" id="logo"> 
+            <span id="projectName">shareShift</span>
+            <ul class="navbar-nav mr-auto" style="list-style: none;" >
+    
+                <li  class="linksPosition"> <a routerLink="publish" class="links">publish ride</a></li>
+    
+                <li class="nav-item active"  class="linksPosition"> <a routerLink="registerPage" class="links">signup</a>
+                </li>
+                <select name="login" id="login"  (change)="onRoleChange($event)" class="form-control" >login
+                    <option value="" [disabled]="true">login</option>
+                    <option value="User">user</option>
+                    <option value="Admin" >admin</option>
+                </select>
+            </ul>
+        </div>
+       
+      </nav>  
+     
+</div>
+
+ 
+<router-outlet></router-outlet>

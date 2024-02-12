@@ -1,0 +1,47 @@
+#box{
+    margin-top: 0px;
+    position: relative;
+    left: 200px;
+}
+.input{
+    width: 300px;
+    position: relative;
+}
+.form-control{
+    height: 50px;
+    color: blueviolet;
+    border-bottom: solid 3px rgb(0, 0, 0);
+    border-radius: 10px;
+    margin: 18px;
+}
+#person{
+    position: relative;
+    left: 135px;
+}
+#submit{
+    border-radius: 20px;
+    color:white;
+    background-color: black;
+    border:none;
+}
+#submit:hover{
+    color:black;
+    background-color: white;
+    border:solid 2px black;
+}
+#logimg{
+    width: 400px;
+    height: 400px;
+    position:absolute;
+    left: 10px;
+    padding: 5px;
+    margin: 20px;
+    
+}
+#admin{
+    position: relative;
+    font-size: large;
+    left: 285px;
+    top: 10px;
+    padding: 20px;
+}

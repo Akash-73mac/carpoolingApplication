@@ -1,0 +1,189 @@
+
+<div id="carimg"></div>
+<h1 style="position: absolute; top: 70px; left: 30px;">Registration</h1>
+<div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12 " id="home">
+    
+    <form [formGroup]="registrationForm"  (ngSubmit)=" loginFunction()">
+        <span>
+            <!-- First Name validatiom -->
+        <div class="input-group input-group-lg" class="input" >
+            <input type="text" placeholder="first name*" formControlName="firstName" 
+            minlength="15" maxlength="20" 
+            class="form-control" (focus)="toggleFnameError()" value="" required>
+            <div style="color: red;font-weight:700;" class="fnameerror" *ngIf="firstname?.errors?.['serverError']">
+                {{firstname?.errors?.['serverError']}}  
+             </div>
+            <span class="fnameerror" style="color: red;" *ngIf="firstname?.invalid && (firstname?.dirty|| firstname?.touched)">
+                <span *ngIf="fnameError">
+                    <span style="color: red;  font-weight:700;" *ngIf="firstname?.hasError('required')">*Firstname is required</span>
+                    <span style="color: red;  font-weight:700;" *ngIf="firstname?.hasError('pattern')">*invalid character</span>
+                    </span>
+                    </span>
+        </div>
+
+          <!-- Last Name validaytion -->
+          <div class="input-group input-group-lg" class="input" id="lastname" >
+            <input type="text" placeholder="last name*" formControlName="lastName" 
+            minlength="15" maxlength="20" 
+            class="form-control" (focus)="toggleLnameError()" value="" required>
+            <!-- serverError -->
+                <div style="color: red;font-weight:700;" class="lnameerror" *ngIf="lastname?.errors?.['serverError']">
+                   {{lastname?.errors?.['serverError']}}
+                </div>
+            <span style="color: red;" *ngIf="lastname?.invalid && (lastname?.dirty|| lastname?.touched )" class="lnameerror"> 
+                <span *ngIf="lnameError">
+                    <span style="color: red; font-weight:700;" *ngIf="lastname?.hasError('required')">*lastname is required</span>
+                    <span style="color: red; font-weight:700;" *ngIf="lastname?.hasError('pattern')">*invalid character</span>
+                </span>
+            </span>
+           </div>  
+        </span>
+        
+
+      
+
+        <!-- Age -->
+        <div>
+            <div class="input-group input-group-lg" class="input">
+                <input type="number" placeholder="age*" formControlName="age"
+                min="13" max="100" class="form-control" (focus)="toggleAgeError()" value="">
+                <div style="color: red;" *ngIf="age?.errors?.['serverError']">
+                    {{age?.errors?.['serverError']}}  
+                 </div>
+                <span class="ageerror" style="color: red;" *ngIf="age?.invalid && (age?.dirty || age?.touched || age?.valueChanges )">
+                    <span  *ngIf="ageError">
+                        <span style="color: red; font-weight:700;" *ngIf="age?.hasError('required')">*age is required</span>     
+                        <span style="color: red; font-weight:700;" *ngIf="age?.hasError('max')">*age should not be above 100</span>
+                        <span style="color: red; font-weight:700;" *ngIf="age?.hasError('min')">*starts from teenage</span>              
+                    </span>
+                </span>
+            </div>
+        </div>
+
+
+        <!-- Emailm validf -->
+        <div class="input-group input-group-lg" class="input" id="email">
+            <span class="input-group-text"></span>
+            <input type="text" placeholder="email*" formControlName="email"
+            minlength="20" maxlength="30" class="form-control"  (focus)="toggleEmailError()" value="">
+            <span style="color: red;" class="emailerror" *ngIf="Email?.invalid && (Email?.dirty || Email?.touched && Email?.valueChanges)">
+                <span *ngIf="emailError">
+                    <span style="color: red;font-weight:700;" *ngIf="Email?.hasError('required')">*email required</span> 
+                    <span style="color: red;font-weight:700;" *ngIf="Email?.hasError('pattern')">*invalid email format</span> 
+                    <span style="color: red;font-weight:700;" *ngIf="Email?.hasError('already')">*Email is already exist</span> 
+                    <span style="color: rgb(245, 0, 25);font-weight:700;" *ngIf="already" >*Email is already exist</span> 
+                </span>       
+            </span>
+        </div>
+
+        <!-- phone number validation -->
+        <div class="input-group input-group-lg" class="input">
+            <input type="text" placeholder="mobile number*" formControlName="phoneNumber"
+              maxlength="10" class="form-control"  (focus)="togglePhoneError()" value="">
+             <span class="phoneerror" style="color: red;" *ngIf="phonenumber?.invalid &&  phonenumber?.valueChanges &&(phonenumber?.dirty || phonenumber?.touched ) ">
+                <span *ngIf="phoneError">
+                    <span style="color: red;font-weight:700;" *ngIf="phonenumber?.hasError('required')">*mobileNumber is required</span>     
+                    <span style="color: red;font-weight:700;" *ngIf="phonenumber?.hasError('pattern')">*invalid number</span>
+                </span>
+            </span>
+        </div>
+        <!-- Age validation -->
+        <div class="input-group input-group-lg" class="input" id="role">
+            <select name="role" id="" formControlName="role" class="form-control" (focus)="togglePhoneError()" value="">select role
+
+                    <option value="" [disabled]="true">select role</option>
+                    <option value="driver"   *ngIf="!calage()">driver</option>
+           
+                <option value="rider">rider</option>
+            </select>
+        </div>
+       <!-- driver details -->
+       <!--  -->
+        <div *ngIf="registrationForm.get('role')?.value === 'driver' && !calage()">
+        <div formGroupName="driverDocuments" >
+        <label id="dirveLiscense" for="Driving License">Driving License</label>
+        <input type="file" multiple value="select" placeholder="Driving License"  formControlName="drivingLicense" class="form-control" id="dirivingliscence" (change)="onSelectLisence($event)" accept=".pdf, .jpg, .jpeg, .png">
+        <!-- <div *ngIf="registrationForm.get('driverDocuments.drivingLicense')?.value">{{ registrationForm.get('driverDocuments.drivingLicense')?.value.name }}
+        </div> -->
+        <label id="govtId" for="Driving License">Govt Id </label>
+            <input type="file" placeholder="ID Proof" formControlName="idProof" class="form-control" id="idProof" (change)="onSelectIdProof($event)" accept=".pdf, .jpg, .jpeg, .png">
+            <!-- <div *ngIf="registrationForm.get('driverDocuments.idProof')?.value">{{ registrationForm.get('driverDocuments.idProof')?.value.name }}</div> -->
+        </div>
+
+         <!-- car name validation -->
+         <div>
+            <div class="input-group input-group-lg" class="input" id="carname">
+                <input type="text" placeholder="car name*" formControlName="model"
+                class="form-control" (focus)="toggleModelError()" value="" (change)="setCarName($event)">
+                <div style="color: red;" *ngIf="model?.errors?.['serverError']">
+                    {{model?.errors?.['serverError']}}  
+                 </div>
+                <span class="CarNameError" style="color: red;" *ngIf="model?.invalid && (model?.dirty || model?.touched || model?.valueChanges )">
+                    <span  *ngIf="modelError">
+                        <span style="color: red; font-weight:700;" *ngIf="model?.hasError('required')">*car name is required</span>
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <!-- car capacity validation -->
+        <div>
+            <div class="input-group input-group-lg" class="input" id="capacity">
+                <input type="number" placeholder="capacity*" formControlName="capacity"
+                min="1" max="10" class="form-control" (focus)="toggleCapacityError()" 
+                (change)="setCapacity($event)"
+                value="">
+                <div style="color: red;" *ngIf="capacity?.errors?.['serverError']">
+                    {{capacity?.errors?.['serverError']}}  
+                 </div>
+                <span class="capacityError" style="color: red;" *ngIf="capacity?.invalid && (capacity?.dirty || capacity?.touched || capacity?.valueChanges )">
+                    <span  *ngIf="capacityError">
+                        <span style="color: red; font-weight:700;" *ngIf="capacity?.hasError('required')">*capacity is required</span>
+                        <span style="color: red; font-weight:700;" *ngIf="capacity?.hasError('max')">*capacity should not be above 10</span>
+                        <span style="color: red; font-weight:700;" *ngIf="capacity?.hasError('min')">*capacity starts from one</span>        
+                    </span>
+                </span>
+            </div>
+        </div>
+
+       
+         <!-- Number plate validation    -->
+        <div>
+            <div class="input-group input-group-lg" class="input" id="plateNumber">
+                <input type="text" placeholder="plate number*" formControlName="plateNumber"
+                class="form-control" (focus)="togglePlateNumberError()"
+                (change)="setPlateNumber($event)" value="">
+                <div style="color: red;" *ngIf="plateNumber?.errors?.['serverError']">
+                    {{plateNumber?.errors?.['serverError']}}  
+                 </div>
+                <span class="plateError" style="color: red;" *ngIf="plateNumber?.invalid && (plateNumber?.dirty || plateNumber?.touched || plateNumber?.valueChanges )">
+                    <span  *ngIf="plateNumberError">
+                        <span style="color: red; font-weight:700;" *ngIf="plateNumber?.hasError('required')">*car number is required</span>
+                    </span>
+                </span>
+            </div>
+        </div>
+            
+           
+          </div>
+
+        <div class="input-group input-group-lg" class="input" id="password">
+            <input type="password" placeholder="password*" formControlName="password"  class="form-control form-control-lg"
+            (focus)="togglePasswordError()" value="">
+            
+            <div class="paserror" style="color: red;" *ngIf="Password?.invalid &&  Password?.valueChanges &&(Password?.dirty || Password?.touched ) ">
+               <div *ngIf="passwordError">
+                <span style="color: red;font-weight:700;" *ngIf="Password?.hasError('required')">*Password is required</span>
+                <span style="color: red;font-weight:700;" *ngIf="Password?.hasError('minlength')">*atleast 4 characters</span>
+                <span style="color: red;font-weight:700;" *ngIf="Password?.hasError('maxlength')">*cannot more than 8 characters</span>
+                <span style="color: red;font-weight:700;" *ngIf="Password?.hasError('pattern')">*must contain atleast one capital letter</span>
+                <span style="color: red;font-weight:700;" *ngIf="Password?.hasError('pattern')">*must contain atleast one special character</span>
+                <span style="color: red;font-weight:700;" *ngIf="Password?.hasError('pattern')&& !Password?.hasError('required')">*must contain atleast one number</span>
+               </div>
+           </div>
+        </div>
+        <button type="submit" class="btn btn-primary"  id="register" >register</button>
+    </form>
+    <!-- [disabled]="isRegisterButtonDisabled() -->
+</div>
+<router-outlet></router-outlet> 

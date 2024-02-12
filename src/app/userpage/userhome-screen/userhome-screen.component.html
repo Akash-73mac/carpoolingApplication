@@ -1,0 +1,17 @@
+<div class="site">
+	<nav class="nav">
+		<img src="assets\Images\shareShift.png" id="logo">
+		<div class="nav__title">welcome!  {{name}}</div>
+		<ul class="nav__list">
+			<li class="nav__item" *ngIf="onRoleRider()"><a routerLink routerLink="bookride"  class="links">search ride</a></li>
+
+			<li class="nav__item"  *ngIf="onRoleDriver()" ><a routerLink routerLink="postride"  class="links">publish ride</a></li>
+			<li class="nav__item" *ngIf="onRoleRider()"> <a routerLink="inbox">my rides </a></li>
+			<li class="nav__item" *ngIf="onRoleDriver()"> <a routerLink="myposts" >my posts </a></li>
+			<li class="nav__item"><a routerLink="profile">profile</a> </li>
+            <li class="nav__item"><a routerLink routerLink="/login" (click)="logout()"  class="links">logout</a></li>
+		</ul>
+	</nav>
+
+	<router-outlet></router-outlet>
+		

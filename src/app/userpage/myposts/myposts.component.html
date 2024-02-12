@@ -1,0 +1,39 @@
+
+<table class="table"  >
+  <thead class="thead-dark" >
+    <tr>
+      <th scope="col">s.no</th>
+      <th scope="col">starting point</th>
+      <th scope="col">ending point</th>
+      <th scope="col">date</th>
+      <th scope="col">status</th>
+      <th scope="col">booked/posted</th>
+      <th scope="col">price</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let data of source">
+    <tr style="height: 100px;">
+      <th scope="row">{{data.index}}</th>
+      <td>{{data.from.split(',').splice(0,3).join(',')}}</td>
+      <td>{{data.to.split(',').splice(0,3).join(',')}}</td>
+      <td>{{data.date}}</td>
+      <td>{{data.status}}</td>
+      <td>{{data.booked}}/{{data.seats}}</td>
+      <td><b>{{data.price}}</b></td>
+      <div *ngIf="data.status==='active'">
+        <button (click)="closePost(data)" class="btn btn-warning">close</button>
+        <button (click)="deletePost(data)" class="btn btn-danger">cancel</button>
+      </div>
+      <div *ngIf="data.status==='closed'">
+        <button class="btn btn-success">closed</button>
+        
+      </div>
+      
+      <!-- <button>Edit</button> -->
+    </tr>
+  </tbody>
+</table>
+
+
+
