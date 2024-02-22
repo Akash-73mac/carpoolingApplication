@@ -17,7 +17,7 @@ public class RegisterService {
 		 
 		 if(RegValues.getFirstName().length()>10)
 		 {
-			 return ResponseEntity.ok().body("First must less than 10");
+			 return ResponseEntity.ok().body("First nan must less than 10");
 		 }
 		String encrypt= RegValues.getPassword();
 		String enVAR="";

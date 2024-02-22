@@ -19,8 +19,6 @@ public class ExceptionHandlerApp {
 			notValid.put(error.getField(), error.getDefaultMessage());
 		});
 		return notValid;
-		
 	}
-	
 
 }

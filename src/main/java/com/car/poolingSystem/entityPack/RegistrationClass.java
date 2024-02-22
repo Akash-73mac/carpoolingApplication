@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 @Entity
 public class RegistrationClass {
 	@Id
@@ -14,9 +15,11 @@ public class RegistrationClass {
 	private int UserId;
 	@Email
 	private String email;
-	private long phoneNumber;
+	@Pattern(regexp = "^\\d{10}$", message = "invalid phone number")
+	private String phoneNumber;
 	@NotBlank
 	private String firstName;
+	@NotBlank
 	private String lastName;
 	private Date dob;
 	private String roll;
@@ -35,7 +38,7 @@ public class RegistrationClass {
 	public void setUserId(int userId) {
 		UserId = userId;
 	}
-	public void setPhoneNumber(long phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public String getFirstName() {
